@@ -2,16 +2,17 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 
 interface HeroProps {
-  userInput: (input: string) => void; // Assuming this is your callback function for handling search input
+  userInput: (input: string) => void;
 }
 
 const Hero: React.FC<HeroProps> = ({ userInput }) => {
   const [searchInput, setSearchInput] = useState<string>('');
   const heroRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
   const handleButtonClick = () => {
-    userInput(searchInput); // Pass search input to parent component
-    scrollToSection(); // Scroll to MemberCard section
+    userInput(searchInput);
+    scrollToSection();
   };
 
   const scrollToSection = () => {
@@ -19,50 +20,50 @@ const Hero: React.FC<HeroProps> = ({ userInput }) => {
       scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
   return (
-    <div ref={heroRef} className="text-center translate-y-[-50px]">
-      <div>
+    <div ref={heroRef} className="relative text-center">
+      <div className="h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[65vh] relative">
         <Image
           src="/Images/Skyline.png"
           alt="hero-image"
-          width={800}
-          height={200}
-          className="w-full absolute mt-[50px]"
+          layout="fill"
+          objectFit="cover"
+          className="w-full h-full"
         />
-      </div>
-      <div className="mt-[70px]">
-        <h2 className="text-[100px] text-purple-800 -tracking-widest font-bold">
-          Our Amazing Corporate Members
-        </h2>
-        <div className="mt-5 z-10 flex gap-2 items-center justify-center">
-          <input
-            type="text"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            placeholder="Search Corporate Member"
-            className="z-50 bg-white p-3 border-[1px] rounded-full px-5 w-[36%] shadow-sm"
-          />
-          <button
-            onClick={handleButtonClick}
-            className="bg-purple-800 rounded-full p-3 shadow-md z-10 cursor-pointer hover:scale-105 transition-all"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-purple-800 font-bold tracking-tight mb-4 sm:mb-6 md:mb-8">
+            Our Amazing Corporate Members
+          </h2>
+          <div className="mt-2 sm:mt-4 flex items-center justify-center w-full max-w-md">
+            <div className="relative flex w-full">
+              <input
+                type="text"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                placeholder="Search Corporate Member"
+                className="bg-white p-2 sm:p-3 border rounded-l-full rounded-r-full w-full pr-12 shadow-sm"
               />
-            </svg>
-          </button>
-          <div ref={scrollRef} className='mt-5'>
-
+              <button
+                onClick={handleButtonClick}
+                className="absolute right-0 top-0 bottom-0 bg-purple-800 rounded-r-full px-3 sm:px-4 shadow-md cursor-pointer hover:bg-purple-700 transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>

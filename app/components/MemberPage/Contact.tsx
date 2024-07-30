@@ -12,6 +12,8 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
+    const [recaptchaValue, setRecaptchaValue] = React.useState<string | null>(null);
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -34,12 +36,18 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
             return;
         }
 
+        if (!recaptchaValue) {
+            console.error('reCAPTCHA value is missing.');
+            return;
+        }
+
         const templateParams = {
             to_name: ccEmail,
             from_name: `${firstName} ${lastName}`,
             phone_number: phoneNumber,
             email_address: emailAddress,
             message: message,
+            'g-recaptcha-response': recaptchaValue,
         };
 
         // Log templateParams to debug
@@ -54,6 +62,7 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
     };
 
     const onChange = (value: string | null) => {
+        setRecaptchaValue(value);
         console.log("Captcha value:", value);
     };
 

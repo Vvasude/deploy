@@ -12,7 +12,7 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
-    const [recaptchaValue, setRecaptchaValue] = React.useState<string | null>(null);
+    const [recaptchaToken, setRecaptchaToken] = React.useState<string | null>(null);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -36,8 +36,8 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
             return;
         }
 
-        if (!recaptchaValue) {
-            console.error('reCAPTCHA value is missing.');
+        if (!recaptchaToken) {
+            console.error('reCAPTCHA validation failed.');
             return;
         }
 
@@ -47,7 +47,7 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
             phone_number: phoneNumber,
             email_address: emailAddress,
             message: message,
-            'g-recaptcha-response': recaptchaValue,
+            'g-recaptcha-response': recaptchaToken, // Add the reCAPTCHA token to the template parameters
         };
 
         // Log templateParams to debug
@@ -61,9 +61,9 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
         }
     };
 
-    const onChange = (value: string | null) => {
-        setRecaptchaValue(value);
+    const onRecaptchaChange = (value: string | null) => {
         console.log("Captcha value:", value);
+        setRecaptchaToken(value);
     };
 
     return (
@@ -134,8 +134,8 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
                             </div>
                             <div>
                                 <ReCAPTCHA
-                                    sitekey="6Le92hsqAAAAAJjDBazRYye4LndksKLbcQsrcpB5"
-                                    onChange={onChange}
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                                    onChange={onRecaptchaChange}
                                 />
                             </div>
                             <div className="flex justify-end p-4">

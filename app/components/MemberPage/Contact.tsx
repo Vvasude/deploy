@@ -4,14 +4,15 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import emailjs from 'emailjs-com';
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactProps {
     ccEmail: string;
 }
 
 const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const form = event.currentTarget;
@@ -19,14 +20,41 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
 
         const firstName = formData.get('firstName') as string;
         const lastName = formData.get('lastName') as string;
-        const email = formData.get('email') as string;
+        const phoneNumber = (document.getElementById('phone') as HTMLInputElement).value;
+        const emailAddress = (document.getElementById('email') as HTMLInputElement).value;
         const message = formData.get('message') as string;
 
-        console.log('Form Data:', { firstName, lastName, email, message });
-        console.log('Email sent to:', 'vvasude3@uwo.ca');
-        console.log('CC:', ccEmail);
+        // Accessing EmailJS service ID, template ID, and user ID from environment variables
+        const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+        const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+        const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID || '';
 
-        form.submit(); // Proceed with the form submission
+        if (!serviceID || !templateID || !userID) {
+            console.error('EmailJS configuration is missing. Check your environment variables.');
+            return;
+        }
+
+        const templateParams = {
+            to_name: ccEmail,
+            from_name: `${firstName} ${lastName}`,
+            phone_number: phoneNumber,
+            email_address: emailAddress,
+            message: message,
+        };
+
+        // Log templateParams to debug
+        console.log('Template Parameters:', templateParams);
+
+        try {
+            const result = await emailjs.send(serviceID, templateID, templateParams, userID);
+            console.log('Email sent:', result.text);
+        } catch (error) {
+            console.error('Error sending email:', error);
+        }
+    };
+
+    const onChange = (value: string | null) => {
+        console.log("Captcha value:", value);
     };
 
     return (
@@ -38,11 +66,8 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
                     <div className="max-w-lg mx-auto">
                         <form
                             className="space-y-4"
-                            action="https://formsubmit.co/vvasude3@uwo.ca" // Default action
-                            method="POST"
-                            onSubmit={handleSubmit} // Attach handleSubmit function
+                            onSubmit={handleSubmit}
                         >
-                            <input type="hidden" name="_cc" value={ccEmail} /> {/* Use ccEmail prop */}
                             <div className="border border-gray-800 rounded-lg p-4">
                                 <label htmlFor="firstName" className="block text-lg font-medium text-gray-700">First Name</label>
                                 <input
@@ -62,6 +87,17 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
                                     name="lastName"
                                     className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
                                     placeholder='Please Enter Your Last Name Here'
+                                    required
+                                />
+                            </div>
+                            <div className="border border-gray-800 rounded-lg p-4">
+                                <label htmlFor="phone" className="block text-lg font-medium text-gray-700">Phone Number</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                    placeholder='Please Enter Your Phone Number Here'
                                     required
                                 />
                             </div>
@@ -86,6 +122,12 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
                                     placeholder='Please Enter Your Message Here'
                                     required
                                 ></textarea>
+                            </div>
+                            <div>
+                                <ReCAPTCHA
+                                    sitekey="6Le92hsqAAAAAJjDBazRYye4LndksKLbcQsrcpB5"
+                                    onChange={onChange}
+                                />
                             </div>
                             <div className="flex justify-end p-4">
                                 <Button variant="contained" size="large" color="primary" type="submit">

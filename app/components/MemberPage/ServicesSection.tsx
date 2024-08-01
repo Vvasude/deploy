@@ -32,6 +32,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
                     maxWidth: '1200px',
                     margin: '0',
                     justifyContent: 'start',  // Aligns the boxes to the left
+                    marginLeft: { lg: '60px' }, // Match with header alignment
                 }}
             >
                 {services.map((service, index) => (

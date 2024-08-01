@@ -1,7 +1,6 @@
 import React from 'react';
 import { Members } from '@/app/components/MemberInfo/Members';  // Adjust path as needed
 import ContactCard from '@/app/components/MemberPage/ContactCard';
-import LogoAndContactInfo from '@/app/components/MemberPage/LogoAndContactInfo';
 import NameContactInfo from '@/app/components/MemberPage/NameContactInfo';
 import ServicesSection from '@/app/components/MemberPage/ServicesSection';
 import AboutUsAndMapSection from '@/app/components/MemberPage/AboutUsAndMapSection';

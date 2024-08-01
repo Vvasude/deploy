@@ -1011,9 +1011,9 @@ export const Members: Member[] = [
     {
         //fix this one too
         id: "60",
-        Name: "",
-        Firstname: "SivaandJoy",
-        Lastname: "",
+        Name: "Siva and Joy",
+        Firstname: "Sivaand",
+        Lastname: "Joy",
         logo: "/Logos/SivaandJoy.png",
         address: "205 - 7 Eastvale Drive, Markham, Ontario, L3S 4N8",
         type: "RealEstate",

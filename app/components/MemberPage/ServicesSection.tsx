@@ -30,11 +30,12 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
                     },
                     gap: 2,
                     maxWidth: '1200px',
-                    margin: '0 auto',
+                    margin: '0',
+                    justifyContent: 'start',  // Aligns the boxes to the left
                 }}
             >
                 {services.map((service, index) => (
-                    <Card key={index} sx={{ minWidth: 280, maxWidth: 380, margin: '0 auto' }}>
+                    <Card key={index} sx={{ minWidth: 280, maxWidth: '100%', margin: '0', justifySelf: 'start' }}>
                         <CardContent>
                             <Typography variant="body1" component="div" className="max-w-lg mx-auto mt-4">
                                 <div className="flex items-center space-x-2">

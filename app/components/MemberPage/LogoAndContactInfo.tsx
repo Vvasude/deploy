@@ -32,26 +32,26 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({ logo, Firstname
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-4 drop-shadow-lg text-center lg:text-left">
                         {Firstname} {Lastname}
                     </h1>
-                    <div className="flex flex-col items-center lg:items-start w-full">
-                        <div className="flex items-center mb-2 justify-center lg:justify-start w-full">
+                    <div className="flex flex-col items-start w-full">
+                        <div className="flex items-center mb-2 justify-start w-full">
                             <LocationMarkerIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-1 drop-shadow-lg flex-shrink-0" />
-                            <p className="text-base sm:text-lg md:text-xl text-center lg:text-left">{address}</p>
+                            <p className="text-base sm:text-lg md:text-xl">{address}</p>
                         </div>
-                        <div className="flex items-center mb-2 justify-center lg:justify-start w-full">
+                        <div className="flex items-center mb-2 justify-start w-full">
                             <PhoneIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-1 drop-shadow-lg flex-shrink-0" />
-                            <p className="text-base sm:text-lg md:text-xl text-center lg:text-left">
+                            <p className="text-base sm:text-lg md:text-xl">
                                 <a href={`tel:${phone}`} className="text-blue-700 hover:text-yellow-400 transition-colors duration-300">{phone}</a>
                             </p>
                         </div>
-                        <div className="flex items-center mb-2 justify-center lg:justify-start w-full">
+                        <div className="flex items-center mb-2 justify-start w-full">
                             <MailIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-1 drop-shadow-lg flex-shrink-0" />
-                            <p className="text-base sm:text-lg md:text-xl break-all text-center lg:text-left">
+                            <p className="text-base sm:text-lg md:text-xl break-all">
                                 <a href={`mailto:${email}`} className="text-blue-700 hover:text-yellow-400 transition-colors duration-300">{email}</a>
                             </p>
                         </div>
-                        <div className="flex items-center justify-center lg:justify-start w-full">
+                        <div className="flex items-center justify-start w-full">
                             <GlobeAltIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-1 drop-shadow-lg flex-shrink-0" />
-                            <p className="text-base sm:text-lg md:text-xl break-all text-center lg:text-left">
+                            <p className="text-base sm:text-lg md:text-xl break-all">
                                 <a href={website} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-yellow-400 transition-colors duration-300">{website}</a>
                             </p>
                         </div>

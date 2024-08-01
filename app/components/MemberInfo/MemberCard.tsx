@@ -1,7 +1,6 @@
 'use client'
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -30,9 +29,9 @@ const MemberCard: React.FC<MemberCardProps> = ({ firstName, lastName, logo, addr
                 flexDirection: 'column',
                 height: '100%',
                 cursor: 'pointer',
-                border: '4px solid #b3b3b3', // Lighter, thinner border
-                borderRadius: '8px', // Slightly rounded corners
-                boxShadow: '0 4px 8px rgba(0,0,0,0.1)', // 3D shadow effect
+                border: '4px solid #b3b3b3',
+                borderRadius: '8px',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
                 transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
                 '&:hover': {
                     transform: 'translateY(-5px)',
@@ -45,7 +44,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ firstName, lastName, logo, addr
                         image={logo}
                         alt={`${firstName} ${lastName}`}
                         sx={{
-                            height: { xs: 150, sm: 180, md: 200 }, // Responsive height
+                            height: { xs: 150, sm: 180, md: 200 },
                             objectFit: 'contain',
                             margin: '16px',
                         }}
@@ -54,16 +53,18 @@ const MemberCard: React.FC<MemberCardProps> = ({ firstName, lastName, logo, addr
                         flexGrow: 1,
                         display: 'flex',
                         flexDirection: 'column',
-                        justifyContent: 'space-between',
-                        padding: { xs: '12px', sm: '16px' }, // Responsive padding
+                        justifyContent: 'center', // Vertically centers content
+                        alignItems: 'center', // Horizontally centers content
+                        padding: { xs: '12px', sm: '16px' },
+                        textAlign: 'center', // Ensures text is centered
                     }}>
                         <Typography gutterBottom variant="h5" component="div" sx={{
-                            fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.5rem' }, // Responsive font size
+                            fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.5rem' },
                         }}>
                             {firstName} {lastName}
                         </Typography>
                         <Typography variant="body2" color="text.secondary" sx={{
-                            fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' }, // Responsive font size
+                            fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
                         }}>
                             {address}
                         </Typography>

@@ -6,6 +6,18 @@ export default [
         URL: 'Accountants',
     },
     {
+        id: 1,
+        name: 'Auto Services',
+        icon: '/Images/Car.jpg',
+        URL: 'AutoServices',
+    },
+    {
+        id: 100,
+        name: 'Engineering',
+        icon: '/Images/Engineering.jpg',
+        URL: 'Engineering',
+    },
+    {
         id: 2,
         name: 'Entrepreneur',
         icon: '/Images/HandShakeImage.jpg',
@@ -34,6 +46,12 @@ export default [
         name: 'Healthcare',
         icon: '/Images/HealthImage.jpg',
         URL: 'HealthCare',
+    },
+    {
+        id: 100,
+        name: 'Impex',
+        icon: '/Images/Impex.jpg',
+        URL: 'Impex',
     },
     {
         id: 7,

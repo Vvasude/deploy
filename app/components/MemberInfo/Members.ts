@@ -228,7 +228,7 @@ export const Members: Member[] = [
         Name: "",
         Firstname: "Gobiraj",
         Lastname: "Thiruchelvam",
-        logo: "/Logos/gobirajThiruchelvam.png",
+        logo: "/Logos/Gobiraj.png",
         address: "795 Milner Avenue Toronto, Ontario M1B 3C3",
         type: "RealEstate",
         phone: "416-219-3333",

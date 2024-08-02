@@ -42,6 +42,12 @@ export default [
         URL: 'Finance',
     },
     {
+        id: 5,
+        name: 'Funeral Services',
+        icon: '/Images/Funeral.jpg',
+        URL: 'FuneralServices',
+    },
+    {
         id: 6,
         name: 'Healthcare',
         icon: '/Images/HealthImage.jpg',

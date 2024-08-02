@@ -1216,7 +1216,7 @@ export const Members: Member[] = [
     {
         id: "72",
         Name: "",
-        Firstname: "Vijakulan",
+        Firstname: "Vijaykulan",
         Lastname: "Viyayaratnam",
         logo: "/Logos/Vijakulan.png",
         address: "",

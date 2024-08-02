@@ -12,6 +12,12 @@ export default [
         URL: 'AutoServices',
     },
     {
+        id: 1,
+        name: 'Cleaning Services',
+        icon: '/Images/Cleaning.jpg',
+        URL: 'CleaningServices',
+    },
+    {
         id: 100,
         name: 'Engineering',
         icon: '/Images/Engineering.jpg',
@@ -78,10 +84,10 @@ export default [
         icon: '/Images/RestaurantImage.jpg',
         URL: 'Restaurants',
     },
-    {
-        id: 10,
-        name: 'Other',
-        icon: '/Images/OtherImage.jpg',
-        URL: 'Other',
-    },
+    // {
+    //     id: 10,
+    //     name: 'Other',
+    //     icon: '/Images/OtherImage.jpg',
+    //     URL: 'Other',
+    // },
 ]

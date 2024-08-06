@@ -16,11 +16,12 @@ interface ServicesSectionProps {
 
 const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
     return (
-        <div className="w-full max-w-8xl bg-white rounded-lg shadow-xl p-4 sm:p-6 md:p-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 ml-4 sm:ml-8 md:ml-14 text-left">
+        <div className="w-full max-w-8xl mx-auto bg-white rounded-lg shadow-xl p-4 sm:p-6 md:p-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 ml-4 sm:ml-6 md:ml-8 lg:ml-14 text-left">
                 Services Provided
             </h1>
             <Box
+                className='ml-50'
                 sx={{
                     display: 'grid',
                     gridTemplateColumns: {
@@ -30,9 +31,9 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
                     },
                     gap: 2,
                     maxWidth: '1200px',
-                    margin: '0',
-                    justifyContent: 'start',  // Aligns the boxes to the left
-                    marginLeft: { sm: '60px', md: '60px', lg: '60px' }, // Match with header alignment
+                    margin: '0 auto', // Center horizontally
+
+                    padding: { xs: '0 1rem', sm: '0 2rem' }, // Ensure padding for small screens
                 }}
             >
                 {services.map((service, index) => (

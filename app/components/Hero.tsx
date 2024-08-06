@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ userInput }) => {
           alt="hero-image"
           layout="fill"
           objectFit="cover"
-          className="w-full h-full"
+          className="w-full h-full opacity-65"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-purple-800 font-bold tracking-tight mb-4 sm:mb-6 md:mb-8">

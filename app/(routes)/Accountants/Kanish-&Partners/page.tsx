@@ -5,6 +5,7 @@ import LogoAndContactInfo from '@/app/components/MemberPage/LogoAndContactInfo';
 import AboutUsAndMapSection from '@/app/components/MemberPage/AboutUsAndMapSection';
 import ServicesSection from '@/app/components/MemberPage/ServicesSection';
 import { IoCheckmarkCircle } from "react-icons/io5";  // Import the necessary icons
+import Contact from '@/app/components/MemberPage/Contact';
 
 
 const MemberPage: React.FC = () => {
@@ -17,7 +18,7 @@ const MemberPage: React.FC = () => {
     }
 
 
-    const { Firstname, Lastname, logo, address, phone, email, website, iframe, aboutus, sectionItem1, sectionItem2, sectionItem3 } = member;
+    const { Firstname, Lastname, logo, address, phone, email, website, iframe, aboutus, sectionItem1, sectionItem2, sectionItem3, Name } = member;
     // Create the services array based on available section items
     const services = [
         { icon: IoCheckmarkCircle, description: sectionItem1 },
@@ -39,7 +40,7 @@ const MemberPage: React.FC = () => {
             <AboutUsAndMapSection aboutus={aboutus} iframe={iframe} />
             <ServicesSection services={services} />
             <div className="w-full max-w-8xl bg-white rounded-lg shadow-xl">
-                <ContactCard />
+                <ContactCard ccEmail={email} name={Name} /> {/* Pass email as ccEmail */}
             </div>
         </div>
     );

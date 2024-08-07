@@ -1,10 +1,10 @@
 import React from 'react';
 import { Members } from '@/app/components/MemberInfo/Members';  // Adjust path as needed
-import ContactCard from '@/app/components/MemberPage/ContactCard';
 import LogoAndContactInfo from '@/app/components/MemberPage/LogoAndContactInfo';
 import AboutUsAndMapSection from '@/app/components/MemberPage/AboutUsAndMapSection';
 import ServicesSection from '@/app/components/MemberPage/ServicesSection';
 import { IoCheckmarkCircle } from "react-icons/io5";  // Import the necessary icons
+import Contact from '@/app/components/MemberPage/Contact';
 const MemberPage: React.FC = () => {
     const memberId = '3'; // Manually set the ID here for each page
 
@@ -36,7 +36,7 @@ const MemberPage: React.FC = () => {
             <AboutUsAndMapSection aboutus={aboutus} iframe={iframe} />
             <ServicesSection services={services} />
             <div className="w-full max-w-8xl bg-white rounded-lg shadow-xl">
-                <ContactCard />
+                <Contact ccEmail={email} name={Firstname} /> {/* Pass email as ccEmail */}
             </div>
         </div>
     );

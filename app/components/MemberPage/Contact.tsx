@@ -9,9 +9,11 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactProps {
     ccEmail: string;
+    name: string; // Add a new prop for the name
+
 }
 
-const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
+const Contact: React.FC<ContactProps> = ({ ccEmail, name }) => {
     const [recaptchaToken, setRecaptchaToken] = React.useState<string | null>(null);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -71,7 +73,7 @@ const Contact: React.FC<ContactProps> = ({ ccEmail }) => {
             <Card>
                 <CardContent className='justify-center'>
                     <h1 className="text-start text-4xl font-bold mb-2 ml-20 mt-8">Get In Touch</h1>
-                    <h3 className="text-center text-2xl from-neutral-400 mb-8">Our Lovely Team Would Love To Hear From You!</h3>
+                    <h3 className="text-center text-2xl from-neutral-400 mb-8">Send a message to {name}</h3>
                     <div className="max-w-lg mx-auto">
                         <form
                             className="space-y-4"

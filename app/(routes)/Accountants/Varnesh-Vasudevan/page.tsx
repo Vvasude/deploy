@@ -38,7 +38,7 @@ const MemberPage: React.FC = () => {
             <AboutUsAndMapSection aboutus={aboutus} iframe={iframe} />
             <ServicesSection services={services} />
             <div className="w-full max-w-8xl bg-white rounded-lg shadow-xl">
-                <Contact ccEmail={email} /> {/* Pass email as ccEmail */}
+                <Contact ccEmail={email} name={Firstname} /> {/* Pass email as ccEmail */}
             </div>
         </div>
     );

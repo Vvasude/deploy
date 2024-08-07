@@ -16,29 +16,8 @@ const Header = () => {
       <div className='flex-grow flex items-center justify-end'>
         {/* Desktop Menu */}
         <ul className='hidden md:flex gap-7 items-center'>
-          <li className='text-lg hover:text-purple-800 cursor-pointer'>
-            <Link href='/'>Home</Link>
-          </li>
-          <li className='text-lg hover:text-purple-800 cursor-pointer'>
-            <Link href='/AboutUs'>About Us</Link>
-          </li>
-          <li className='text-lg hover:text-purple-800 cursor-pointer'>
-            <Link href='/Membership'>Membership</Link>
-          </li>
-          <li className='text-lg hover:text-purple-800 cursor-pointer'>
-            <Link href='/BusinessCentre'>Business Centre</Link>
-          </li>
-          <li className='text-lg hover:text-purple-800 cursor-pointer'>
-            <Link href='/Events'>Events</Link>
-          </li>
-          <li className='text-lg hover:text-purple-800 cursor-pointer'>
-            <Link href='/News'>News</Link>
-          </li>
-          <li className='text-lg hover:text-purple-800 cursor-pointer'>
-            <Link href='/Gallery'>Gallery</Link>
-          </li>
-          <li className='text-lg hover:text-purple-800 cursor-pointer'>
-            <Link href='/ContactUs'>Contact Us</Link>
+          <li className='text-xl hover:text-purple-800 cursor-pointer'>
+            <Link href='https://ctcc.ca'>Home</Link>
           </li>
         </ul>
         {/* Mobile Menu Button */}
@@ -65,27 +44,6 @@ const Header = () => {
           <ul className='flex flex-col p-4'>
             <li className='text-lg hover:text-purple-800 cursor-pointer'>
               <Link href='/'>Home</Link>
-            </li>
-            <li className='text-lg hover:text-purple-800 cursor-pointer'>
-              <Link href='/AboutUs'>About Us</Link>
-            </li>
-            <li className='text-lg hover:text-purple-800 cursor-pointer'>
-              <Link href='/Membership'>Membership</Link>
-            </li>
-            <li className='text-lg hover:text-purple-800 cursor-pointer'>
-              <Link href='/BusinessCentre'>Business Centre</Link>
-            </li>
-            <li className='text-lg hover:text-purple-800 cursor-pointer'>
-              <Link href='/Events'>Events</Link>
-            </li>
-            <li className='text-lg hover:text-purple-800 cursor-pointer'>
-              <Link href='/News'>News</Link>
-            </li>
-            <li className='text-lg hover:text-purple-800 cursor-pointer'>
-              <Link href='/Gallery'>Gallery</Link>
-            </li>
-            <li className='text-lg hover:text-purple-800 cursor-pointer'>
-              <Link href='/ContactUs'>Contact Us</Link>
             </li>
           </ul>
         </div>

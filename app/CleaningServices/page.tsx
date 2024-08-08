@@ -5,11 +5,30 @@ import Grid from '@mui/material/Grid';
 import { Members } from '../components/MemberInfo/Members';
 import MemberCard from '../components/MemberInfo/MemberCard';
 
-const RealEstate: React.FC = () => {
-    const [shuffledMembers, setShuffledMembers] = useState([]);
+// Define the Member type
+interface Member {
+    id: string;
+    Firstname: string;
+    Lastname: string;
+    logo: string;
+    address: string;
+    type: string;
+    phone: string;
+    email: string;
+    website: string;
+    iframe: string;
+    aboutus: string;
+    sectionItem1: string;
+    sectionItem2: string;
+    sectionItem3: string;
+}
 
-    // Shuffle the members array
-    const shuffleArray = (array) => {
+const RealEstate: React.FC = () => {
+    // Initialize the state with the correct type
+    const [shuffledMembers, setShuffledMembers] = useState<Member[]>([]);
+
+    // Shuffle the members array with typed parameter
+    const shuffleArray = (array: Member[]): Member[] => {
         const shuffledArray = array.slice();
         for (let i = shuffledArray.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));

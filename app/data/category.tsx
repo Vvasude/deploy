@@ -25,22 +25,23 @@ export default [
     },
     {
         id: 5,
+        name: 'Education',
+        icon: '/Images/Education.jpg',
+        URL: 'Education',
+    },
+    {
+        id: 6,
         name: 'Engineering',
         icon: '/Images/Engineering.jpg',
         URL: 'Engineering',
     },
     {
-        id: 6,
+        id: 7,
         name: 'Entrepreneur',
         icon: '/Images/HandShakeImage.jpg',
         URL: 'Entrepreneur',
     },
-    {
-        id: 7,
-        name: 'Education',
-        icon: '/Images/Education.jpg',
-        URL: 'Education',
-    },
+
     {
         id: 8,
         name: 'Event Management',

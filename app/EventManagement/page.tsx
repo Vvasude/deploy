@@ -1,9 +1,10 @@
-'use client'
+'use client';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import { Members } from '../components/MemberInfo/Members';
 import MemberCard from '../components/MemberInfo/MemberCard';
+import categories from '../data/category'; // Assuming this is an array
 
 // Define the Member type
 interface Member {
@@ -24,10 +25,9 @@ interface Member {
 }
 
 const RealEstate: React.FC = () => {
-    // Initialize the state with the correct type
     const [shuffledMembers, setShuffledMembers] = useState<Member[]>([]);
+    const [categoryName, setCategoryName] = useState<string>('');
 
-    // Shuffle the members array with typed parameter
     const shuffleArray = (array: Member[]): Member[] => {
         const shuffledArray = array.slice();
         for (let i = shuffledArray.length - 1; i > 0; i--) {
@@ -38,10 +38,19 @@ const RealEstate: React.FC = () => {
     };
 
     useEffect(() => {
-        // Filter members whose type is 'RealEstate'
-        const realEstateMembers = Members.filter(member => member.type === 'EventManagement');
-        setShuffledMembers(shuffleArray(realEstateMembers));
-    }, []); // Only run this effect once when the component mounts
+        if (categories.length > 0) {
+            // Assuming you want to use the first category's name
+            const firstCategory = categories[7];
+            setCategoryName(firstCategory.name);
+
+            // Update the document title based on the category's name
+            document.title = `CTCC | ${firstCategory.name}`;
+
+            // Filter members whose type matches the category name
+            const realEstateMembers = Members.filter(member => member.type === "EventManagement");
+            setShuffledMembers(shuffleArray(realEstateMembers));
+        }
+    }, [categories]);
 
     return (
         <Grid container spacing={3} justifyContent="center" marginTop={9}>

@@ -5,11 +5,21 @@ interface AboutUsAndMapSectionProps {
     iframe: string;
 }
 
+// Function to convert plain text with URLs into HTML with clickable links
 const formatAboutUsText = (text: string) => {
-    return text.split('. ').map((sentence, index) => (
-        <p key={index} className="text-start mb-2 text-base sm:text-lg md:text-xl">
-            {sentence}.
-        </p>
+    const urlPattern = /https?:\/\/[^\s]+/g;
+    const parts = text.split(urlPattern);
+
+    // Split text by URLs and intersperse the URLs as <a> tags
+    return parts.map((part, index) => (
+        <React.Fragment key={index}>
+            {part}
+            {index < parts.length - 1 && (
+                <a href={text.match(urlPattern)![index]} target="_blank" rel="noopener noreferrer" className="text-blue-500">
+                    {text.match(urlPattern)![index]}
+                </a>
+            )}
+        </React.Fragment>
     ));
 };
 

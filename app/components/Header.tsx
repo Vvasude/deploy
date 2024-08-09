@@ -19,9 +19,6 @@ const Header = () => {
           <li className='text-xl hover:text-purple-800 cursor-pointer'>
             <Link href='https://ctcc.ca'>Home</Link>
           </li>
-          <li className='text-xl hover:text-purple-800 cursor-pointer'>
-            <Link href='/TestPage'>Test</Link>
-          </li>
         </ul>
         {/* Mobile Menu Button */}
         <button

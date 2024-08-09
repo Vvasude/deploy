@@ -18,7 +18,7 @@ const MemberSearch: React.FC<MemberSearchProps> = ({ searchQuery, members }) => 
     };
 
     const fuse = new Fuse(members, options);
-    const filteredMembers = searchQuery ? fuse.search(searchQuery).map(result => result.item) : members;
+    const filteredMembers = searchQuery ? fuse.search(searchQuery).map(result => result.item) : [];
 
     const listRef = useRef<HTMLDivElement>(null);
 
@@ -29,18 +29,26 @@ const MemberSearch: React.FC<MemberSearchProps> = ({ searchQuery, members }) => 
     }, [searchQuery]);
 
     return (
-        <div ref={listRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 p-6">
-            {searchQuery &&
-                filteredMembers.map((member, index) => (
-                    <MemberCard
-                        key={index}
-                        firstName={member.Firstname}
-                        lastName={member.Lastname}
-                        logo={member.logo}
-                        address={member.address}
-                        type={member.type} // Pass the type here
-                    />
-                ))}
+        <div>
+            {searchQuery && (
+                <>
+                    <h2 style={{ color: '#5a3d99', fontSize: '1.5rem', fontWeight: 'bold', margin: '0 0 20px 0', textAlign: 'center' }}>
+                        Search Results:
+                    </h2>
+                    <div ref={listRef} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 p-6">
+                        {filteredMembers.map((member, index) => (
+                            <MemberCard
+                                key={index}
+                                firstName={member.Firstname}
+                                lastName={member.Lastname}
+                                logo={member.logo}
+                                address={member.address}
+                                type={member.type}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
         </div>
     );
 };

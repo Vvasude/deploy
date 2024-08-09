@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -6,15 +6,16 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from "react-google-recaptcha";
+import { useRouter } from 'next/navigation';
 
 interface ContactProps {
     ccEmail: string;
-    name: string; // Add a new prop for the name
-
+    name: string;
 }
 
 const Contact: React.FC<ContactProps> = ({ ccEmail, name }) => {
     const [recaptchaToken, setRecaptchaToken] = React.useState<string | null>(null);
+    const router = useRouter(); // Use the correct router import
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -28,7 +29,6 @@ const Contact: React.FC<ContactProps> = ({ ccEmail, name }) => {
         const emailAddress = (document.getElementById('email') as HTMLInputElement).value;
         const message = formData.get('message') as string;
 
-        // Accessing EmailJS service ID, template ID, and user ID from environment variables
         const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
         const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
         const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID || '';
@@ -49,15 +49,15 @@ const Contact: React.FC<ContactProps> = ({ ccEmail, name }) => {
             phone_number: phoneNumber,
             email_address: emailAddress,
             message: message,
-            'g-recaptcha-response': recaptchaToken, // Add the reCAPTCHA token to the template parameters
+            'g-recaptcha-response': recaptchaToken,
         };
-
-        // Log templateParams to debug
-        console.log('Template Parameters:', templateParams);
 
         try {
             const result = await emailjs.send(serviceID, templateID, templateParams, userID);
             console.log('Email sent:', result.text);
+
+            // Redirect to the Thank You page after successful submission
+            router.push('/ThankYou');
         } catch (error) {
             console.error('Error sending email:', error);
         }

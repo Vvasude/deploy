@@ -26,7 +26,7 @@ const formatAboutUsText = (text: string) => {
 const AboutUsAndMapSection: React.FC<AboutUsAndMapSectionProps> = ({ aboutus, iframe }) => {
     return (
         <div className="w-full max-w-8xl p-4 bg-white mb-8 shadow-lg rounded-lg">
-            <h1 className="text-start text-2xl sm:text-3xl md:text-4xl font-bold mb-2 ml-4 sm:ml-8 md:ml-20">
+            <h1 className="text-justify text-2xl sm:text-3xl md:text-4xl font-bold mb-2 ml-4 sm:ml-8 md:ml-20">
                 About Us
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-14 ml-4 sm:ml-8 md:ml-20 max-w-8xl mt-4 bg-white">

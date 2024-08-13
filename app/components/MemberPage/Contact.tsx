@@ -72,7 +72,7 @@ const Contact: React.FC<ContactProps> = ({ ccEmail, name }) => {
         <Box sx={{ minWidth: 275 }}>
             <Card>
                 <CardContent className='justify-center'>
-                    <h1 className="text-start text-4xl font-bold mb-2 ml-20 mt-8">Get In Touch</h1>
+                    <h1 className="text-center text-4xl font-bold mb-2 mt-8">Get In Touch</h1>
                     <h3 className="text-center text-2xl from-neutral-400 mb-8">Send a message to {name}</h3>
                     <div className="max-w-lg mx-auto">
                         <form

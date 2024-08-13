@@ -17,7 +17,7 @@ interface ServicesSectionProps {
 const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
     return (
         <div className="w-full max-w-8xl mx-auto bg-white rounded-lg shadow-xl p-4 sm:p-6 md:p-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 ml-4 sm:ml-6 md:ml-8 lg:ml-14 text-left">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 ml-4 sm:ml-6 md:ml-8 lg:ml-14 text-center">
                 Services Provided
             </h1>
             <Box

@@ -13,7 +13,7 @@ const MemberPage: React.FC = () => {
     if (!member) {
         return <div>Member not found</div>;
     }
-    const { Firstname, Lastname, logo, address, phone, email, website, iframe, aboutus, sectionItem1, sectionItem2, sectionItem3 } = member;
+    const { Firstname, Lastname, logo, address, phone, email, type, website, iframe, aboutus, sectionItem1, sectionItem2, sectionItem3 } = member;
 
     // Create the services array based on available section items
     const services = [
@@ -32,7 +32,7 @@ const MemberPage: React.FC = () => {
                 phone={phone}
                 email={email}
                 website={website}
-            />
+                type={type} />
             <AboutUsAndMapSection aboutus={aboutus} iframe={iframe} />
             <ServicesSection services={services} />
             <div className="w-full max-w-8xl bg-white rounded-lg shadow-xl">

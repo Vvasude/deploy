@@ -17,7 +17,7 @@ const MemberPage: React.FC = () => {
     }
 
 
-    const { Firstname, Lastname, logo, address, phone, email, website, iframe, aboutus, sectionItem1, sectionItem2, sectionItem3 } = member;
+    const { Firstname, Lastname, logo, address, phone, email, website, iframe, aboutus, sectionItem1, sectionItem2, sectionItem3, type } = member;
     const services = [
         { icon: IoCheckmarkCircle, description: sectionItem1 },
         { icon: IoCheckmarkCircle, description: sectionItem2 },
@@ -34,6 +34,7 @@ const MemberPage: React.FC = () => {
                 phone={phone}
                 email={email}
                 website={website}
+                type={type}
             />
             <AboutUsAndMapSection aboutus={aboutus} iframe={iframe} />
 

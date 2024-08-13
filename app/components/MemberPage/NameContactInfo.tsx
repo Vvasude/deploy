@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React, { useEffect, useState } from 'react';
 import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon } from '@heroicons/react/solid';
 import { WhatsappShareButton, WhatsappIcon } from 'react-share';
@@ -81,7 +81,8 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                             </p>
                         </div>
                         {/* Share Button */}
-                        <div className="absolute top-4 right-4">
+                        <div className="flex items-center mt-4">
+                            <p className="text-base sm:text-lg md:text-xl mr-2 font-semibold">Share this profile</p>
                             {fullUrl && (
                                 <WhatsappShareButton
                                     url={fullUrl}

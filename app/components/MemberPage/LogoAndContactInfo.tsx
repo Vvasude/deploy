@@ -80,7 +80,7 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                         </div>
                         {/* Share Profile Section */}
                         <div className="flex items-center justify-start w-full mt-4">
-                            <p className="text-lg md:text-xl font-semibold mr-2">Share your profile</p>
+                            <p className="text-lg md:text-xl font-semibold mr-2">Share this profile</p>
                             {fullUrl && (
                                 <WhatsappShareButton
                                     url={fullUrl}

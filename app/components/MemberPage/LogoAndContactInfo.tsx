@@ -1,5 +1,7 @@
-import React from 'react';
-import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon } from '@heroicons/react/solid';
+'use client'
+import React, { useEffect, useState } from 'react';
+import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon, ShareIcon } from '@heroicons/react/solid';
+import { WhatsappShareButton, WhatsappIcon } from 'react-share';
 
 interface LogoAndContactInfoProps {
     logo: string;
@@ -9,9 +11,28 @@ interface LogoAndContactInfoProps {
     phone: string;
     email: string;
     website: string;
+    type: string; // Add type here to construct the correct URL
 }
 
-const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({ logo, Firstname, Lastname, address, phone, email, website }) => {
+const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
+    logo,
+    Firstname,
+    Lastname,
+    address,
+    phone,
+    email,
+    website,
+    type, // Use this prop to construct the correct URL
+}) => {
+    const [fullUrl, setFullUrl] = useState('');
+
+    useEffect(() => {
+        // This will only run in the browser
+        const href = `/${type}/${Firstname}-${Lastname}`; // Include the type in the URL
+        const baseUrl = window.location.origin;
+        setFullUrl(`${baseUrl}${href}`);
+    }, [Firstname, Lastname, type]);
+
     return (
         <div className="mt-2 p-4 sm:p-6 w-full max-w-10xl bg-gradient-to-r from-black via-gray-500 to-black mb-8 shadow-2xl flex justify-center relative overflow-hidden">
             <div className="border-4 border-gray-300 bg-white shadow-lg p-4 flex flex-col lg:flex-row items-center lg:items-center w-full sm:w-4/5 md:w-3/5">
@@ -54,6 +75,18 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({ logo, Firstname
                             <p className="text-base sm:text-lg md:text-xl break-all">
                                 <a href={website} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-yellow-400 transition-colors duration-300">{website}</a>
                             </p>
+                        </div>
+                        {/* Share Button */}
+                        <div className="absolute top-4 right-4">
+                            {fullUrl && (
+                                <WhatsappShareButton
+                                    url={fullUrl}
+                                    title={`${Firstname} ${Lastname}`}
+                                    className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
+                                >
+                                    <WhatsappIcon size={32} round />
+                                </WhatsappShareButton>
+                            )}
                         </div>
                     </div>
                 </div>

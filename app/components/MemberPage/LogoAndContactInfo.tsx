@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon, ShareIcon } from '@heroicons/react/solid';
+import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon } from '@heroicons/react/solid';
 import { WhatsappShareButton, WhatsappIcon } from 'react-share';
 
 interface LogoAndContactInfoProps {
@@ -11,7 +11,7 @@ interface LogoAndContactInfoProps {
     phone: string;
     email: string;
     website: string;
-    type: string; // Add type here to construct the correct URL
+    Name: string;
 }
 
 const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
@@ -22,16 +22,24 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
     phone,
     email,
     website,
-    type, // Use this prop to construct the correct URL
+    Name
 }) => {
     const [fullUrl, setFullUrl] = useState('');
 
     useEffect(() => {
-        // This will only run in the browser
-        const href = `/${type}/${Firstname}-${Lastname}`; // Include the type in the URL
-        const baseUrl = window.location.origin;
-        setFullUrl(`${baseUrl}${href}`);
-    }, [Firstname, Lastname, type]);
+        // Create a relative URL based on the Name prop
+        const href = `/${Name.replace(/\s+/g, '-')}`;
+
+        // Function to set the full URL for sharing
+        const setShareUrl = () => {
+            if (typeof window !== 'undefined') {
+                const baseUrl = window.location.origin;
+                setFullUrl(`${baseUrl}${href}`);
+            }
+        };
+
+        setShareUrl();
+    }, [Name]);
 
     return (
         <div className="mt-2 p-4 sm:p-6 w-full max-w-10xl bg-gradient-to-r from-black via-gray-500 to-black mb-8 shadow-2xl flex justify-center relative overflow-hidden">
@@ -51,7 +59,7 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                 <div className="hidden lg:block border-r-2 border-black h-full mx-4 lg:mx-8"></div>
                 <div className="flex flex-col justify-start items-center lg:items-start w-full lg:w-2/3 text-gray-900 pl-0 lg:pl-4 lg:ml-4 md:ml-16">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-4 drop-shadow-lg text-center lg:text-left">
-                        {Firstname} {Lastname}
+                        {Name}
                     </h1>
                     <div className="flex flex-col items-start w-full">
                         <div className="flex items-center mb-2 justify-start w-full">
@@ -81,7 +89,7 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                             {fullUrl && (
                                 <WhatsappShareButton
                                     url={fullUrl}
-                                    title={`${Firstname} ${Lastname}`}
+                                    title={`Check out ${Name}`}
                                     className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
                                 >
                                     <WhatsappIcon size={32} round />

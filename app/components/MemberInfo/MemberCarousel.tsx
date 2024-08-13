@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import Slider from 'react-slick';
-import MemberCard from './CarouselCard'; // Import your MemberCard component
+import CarouselCard from './CarouselCard'; // Import your MemberCard component
 import { Members } from './Members'; // Import your members data
 
 const MemberCarousel: React.FC = () => {
@@ -38,11 +38,9 @@ const MemberCarousel: React.FC = () => {
             <Slider {...settings}>
                 {Members.map((member, index) => (
                     <div key={index}>
-                        <MemberCard
+                        <CarouselCard
                             logo={member.logo}
-                            type={member.type}
-                            firstName={member.Firstname}
-                            lastName={member.Lastname} />
+                            type={member.type} firstName={member.Firstname} lastName={member.Lastname} />
                     </div>
                 ))}
             </Slider>

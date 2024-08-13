@@ -22,14 +22,14 @@ const MemberCard: React.FC<MemberCardProps> = ({ firstName, lastName, logo, type
             <Card sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                width: { xs: 220, sm: 220, md: 220, lg: 300 }, // Adjusted width
-                height: { xs: 220, sm: 220, md: 220, lg: 300 }, // Adjusted height accordingly
+                width: { xs: 180, sm: 220, md: 220, lg: 300 }, // Adjusted width
+                height: { xs: 180, sm: 220, md: 220, lg: 300 }, // Adjusted height
                 cursor: 'pointer',
                 border: '2px solid #b3b3b3',
                 borderRadius: '8px',
                 boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
                 transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
-                // marginRight: { xs: '4px', sm: '6px', md: '8px' }, // Reduced margin to bring cards closer
+                overflow: 'hidden', // Ensures logo is contained within the card
                 '&:hover': {
                     transform: 'translateY(-3px)',
                     boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
@@ -41,9 +41,9 @@ const MemberCard: React.FC<MemberCardProps> = ({ firstName, lastName, logo, type
                         image={logo}
                         alt={`${firstName} ${lastName}`}
                         sx={{
-                            height: { xs: 80, sm: 100, md: 120 },
-                            objectFit: 'contain',
-                            // margin: '0 0 0 0', // Adjusted to remove lateral margins
+                            height: '100%', // Ensures the image takes the full height of the card
+                            width: '100%', // Ensures the image takes the full width of the card
+                            objectFit: 'contain', // Keeps the logo's aspect ratio and prevents squishing
                         }}
                     />
                     <CardContent sx={{
@@ -52,18 +52,19 @@ const MemberCard: React.FC<MemberCardProps> = ({ firstName, lastName, logo, type
                         flexDirection: 'column',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        // padding: { xs: '4px 4px 0 4px', sm: '8px 8px 0 8px' }, // Reduced padding
                         textAlign: 'center',
+                        position: 'absolute', // Position names off-screen
+                        bottom: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '0', // Hide the name area
+                        overflow: 'hidden',
                     }}>
                         <Typography gutterBottom variant="h5" component="div" sx={{
                             fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
+                            visibility: 'hidden', // Hide name text
                         }}>
                             {firstName} {lastName}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{
-                            fontSize: { xs: '0.7rem', sm: '0.8rem', md: '0.9rem' },
-                        }}>
-                            {/* Placeholder for additional info */}
                         </Typography>
                     </CardContent>
                 </CardActionArea>

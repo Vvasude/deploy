@@ -8,26 +8,36 @@ const MemberCarousel: React.FC = () => {
     const settings = {
         dots: false, // Disable dots
         infinite: true, // Enables infinite scrolling
-        speed: 4000, // Transition speed between slides
+        speed: 2000, // Faster transition speed for smoother movement
         slidesToShow: 3, // Number of cards to show at once
         slidesToScroll: 1, // Number of cards to scroll at once
         autoplay: true, // Enable auto sliding
         autoplaySpeed: 0, // 0 ms delay between slides for continuous movement
         cssEase: 'linear', // Linear transition for continuous movement
-        pauseOnHover: true, // Pause when hovering over the carousel
+        pauseOnHover: false, // Disable pause on hover for mobile
         responsive: [
+            {
+                breakpoint: 1440, // Laptops
+                settings: {
+                    slidesToShow: 1.8, // Show part of the next slide for a continuous effect
+                    slidesToScroll: 1,
+                    speed: 3000, // Slightly faster speed for laptops
+                },
+            },
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
+                    speed: 1500, // Slightly faster speed for tablets
                 },
             },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 1.8, // Show part of the next slide for a continuous effect
                     slidesToScroll: 1,
+                    speed: 1200, // Faster speed for mobile
                 },
             },
         ],

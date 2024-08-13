@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon, ShareIcon } from '@heroicons/react/solid';
+import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon } from '@heroicons/react/solid';
 import { WhatsappShareButton, WhatsappIcon } from 'react-share';
 
 interface LogoAndContactInfoProps {
@@ -23,16 +23,19 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
     phone,
     email,
     website,
+    type,
     Name
 }) => {
     const [fullUrl, setFullUrl] = useState('');
 
     useEffect(() => {
-        // This will only run in the browser
-        const href = `/${Name.replace(/\s+/g, '-')}`; // Adjust the path if needed
+        // Create a formatted name for the URL
+        const formattedName = `${Firstname}-${Lastname}`;
+        // Encode the URL path
+        const href = `/${type}/${encodeURIComponent(formattedName)}`;
         const baseUrl = window.location.origin;
         setFullUrl(`${baseUrl}${href}`);
-    }, [Name]);
+    }, [Firstname, Lastname, type]);
 
     return (
         <div className="mt-2 p-4 sm:p-6 w-full max-w-10xl bg-gradient-to-r from-black via-gray-500 to-black mb-8 shadow-2xl flex justify-center relative overflow-hidden">

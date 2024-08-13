@@ -23,9 +23,10 @@ const MemberCard: React.FC<MemberCardProps> = ({ firstName, lastName, logo, addr
     const handleShare = async (event: React.MouseEvent) => {
         event.stopPropagation(); // Prevents the click event from propagating to the Link component
 
+        const fullUrl = `${window.location.origin}${href}`; // Full URL including the base URL
         const shareData = {
             title: `${firstName} ${lastName}`,
-            url: href,
+            url: fullUrl,
         };
 
         if (isShareSupported) {
@@ -37,7 +38,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ firstName, lastName, logo, addr
             }
         } else {
             try {
-                await navigator.clipboard.writeText(shareData.url);
+                await navigator.clipboard.writeText(fullUrl);
                 alert('URL copied to clipboard!');
             } catch (error) {
                 console.error('Error copying to clipboard:', error);

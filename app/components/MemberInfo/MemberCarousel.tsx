@@ -9,7 +9,7 @@ const MemberCarousel: React.FC = () => {
         dots: false, // Disable dots
         infinite: true, // Enables infinite scrolling
         speed: 3000, // Faster transition speed for smoother movement
-        slidesToShow: 5, // Number of cards to show at once
+        slidesToShow: 3, // Number of cards to show at once
         slidesToScroll: 1, // Number of cards to scroll at once
         autoplay: true, // Enable auto sliding
         autoplaySpeed: 0, // 0 ms delay between slides for continuous movement

@@ -1,7 +1,7 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from 'react';
-import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon } from '@heroicons/react/solid';
-import { WhatsappShareButton, WhatsappIcon } from 'react-share';
+import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon, ClipboardIcon } from '@heroicons/react/solid';
+import { WhatsappShareButton, WhatsappIcon, FacebookShareButton, FacebookIcon, LinkedinShareButton, LinkedinIcon, TwitterShareButton, TwitterIcon } from 'react-share';
 
 interface LogoAndContactInfoProps {
     logo: string;
@@ -29,13 +29,16 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
     const [fullUrl, setFullUrl] = useState('');
 
     useEffect(() => {
-        // Create a formatted name for the URL
         const formattedName = `${Firstname}-${Lastname}`;
-        // Encode the URL path
         const href = `/${type}/${encodeURIComponent(formattedName)}`;
         const baseUrl = window.location.origin;
         setFullUrl(`${baseUrl}${href}`);
     }, [Firstname, Lastname, type]);
+
+    const handleCopyUrl = () => {
+        navigator.clipboard.writeText(fullUrl);
+        alert('URL copied to clipboard!');
+    };
 
     return (
         <div className="mt-2 p-4 sm:p-6 w-full max-w-10xl bg-gradient-to-r from-black via-gray-500 to-black mb-8 shadow-2xl flex justify-center relative overflow-hidden">
@@ -80,17 +83,43 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                                 <a href={website} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-yellow-400 transition-colors duration-300">{website}</a>
                             </p>
                         </div>
-                        {/* Share Button */}
-                        <div className="flex items-center mt-4">
-                            <p className="text-base sm:text-lg md:text-xl mr-2 font-semibold">Share this profile</p>
+                        {/* Share Buttons */}
+                        <div className="flex items-center mt-4 space-x-2">
+                            <p className="text-base sm:text-lg md:text-xl font-semibold mr-2">Share this profile:</p>
                             {fullUrl && (
-                                <WhatsappShareButton
-                                    url={fullUrl}
-                                    title={`Check out ${Name}`}
-                                    className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
-                                >
-                                    <WhatsappIcon size={32} round />
-                                </WhatsappShareButton>
+                                <>
+                                    <WhatsappShareButton
+                                        url={fullUrl}
+                                        title={`Check out ${Name}`}
+                                        className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
+                                    >
+                                        <WhatsappIcon size={32} round />
+                                    </WhatsappShareButton>
+                                    <FacebookShareButton
+                                        url={fullUrl}
+                                        className="p-2 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-300"
+                                    >
+                                        <FacebookIcon size={32} round />
+                                    </FacebookShareButton>
+                                    <LinkedinShareButton
+                                        url={fullUrl}
+                                        className="p-2 bg-blue-800 rounded-full hover:bg-blue-900 transition-colors duration-300"
+                                    >
+                                        <LinkedinIcon size={32} round />
+                                    </LinkedinShareButton>
+                                    <TwitterShareButton
+                                        url={fullUrl}
+                                        className="p-2 bg-blue-400 rounded-full hover:bg-blue-500 transition-colors duration-300"
+                                    >
+                                        <TwitterIcon size={32} round />
+                                    </TwitterShareButton>
+                                    <button
+                                        onClick={handleCopyUrl}
+                                        className="p-2 bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
+                                    >
+                                        <ClipboardIcon className="h-8 w-8 text-white" style={{ height: 20, width: 20 }} />
+                                    </button>
+                                </>
                             )}
                         </div>
                     </div>

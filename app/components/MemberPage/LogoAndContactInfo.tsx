@@ -1,7 +1,17 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon } from '@heroicons/react/solid';
-import { WhatsappShareButton, WhatsappIcon } from 'react-share';
+import {
+    WhatsappShareButton,
+    WhatsappIcon,
+    FacebookShareButton,
+    FacebookIcon,
+    LinkedinShareButton,
+    LinkedinIcon,
+    TwitterShareButton,
+    TwitterIcon,
+} from 'react-share';
+import { ClipboardIcon } from '@heroicons/react/outline';
 
 interface LogoAndContactInfoProps {
     logo: string;
@@ -36,6 +46,11 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
         };
         setShareUrl();
     }, [Firstname, Lastname, type]);
+
+    const handleCopyUrl = () => {
+        navigator.clipboard.writeText(fullUrl);
+        alert('URL copied to clipboard!');
+    };
 
     return (
         <div className="mt-2 p-4 sm:p-6 w-full max-w-10xl bg-gradient-to-r from-black via-gray-500 to-black mb-8 shadow-2xl flex justify-center relative overflow-hidden">
@@ -79,16 +94,49 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                             </p>
                         </div>
                         {/* Share Profile Section */}
-                        <div className="flex items-center justify-start w-full mt-4">
+                        <div className="flex items-center justify-start w-full mt-4 space-x-2">
                             <p className="text-lg md:text-xl font-semibold mr-2">Share this profile</p>
                             {fullUrl && (
-                                <WhatsappShareButton
-                                    url={fullUrl}
-                                    title={`Check out ${Firstname} ${Lastname}`}
-                                    className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
-                                >
-                                    <WhatsappIcon size={32} round />
-                                </WhatsappShareButton>
+                                <>
+                                    <WhatsappShareButton
+                                        url={fullUrl}
+                                        title={`Check out ${Firstname} ${Lastname}`}
+                                        className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
+                                    >
+                                        <WhatsappIcon size={32} round />
+                                    </WhatsappShareButton>
+                                    <FacebookShareButton
+                                        url={fullUrl}
+                                        className="p-2 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors duration-300"
+                                    >
+                                        <FacebookIcon size={32} round />
+                                    </FacebookShareButton>
+
+                                    <TwitterShareButton
+                                        url={fullUrl}
+                                        title={`Check out ${Firstname} ${Lastname}`}
+                                        className="p-2 bg-blue-400 rounded-full hover:bg-blue-500 transition-colors duration-300"
+                                    >
+                                        <TwitterIcon size={32} round />
+                                    </TwitterShareButton>
+                                    <LinkedinShareButton
+                                        url={fullUrl}
+                                        title={`Check out ${Firstname} ${Lastname}`}
+                                        summary={`Visit the profile of ${Firstname} ${Lastname}`}
+                                        source={fullUrl}
+                                        className="p-2 bg-blue-700 rounded-full hover:bg-blue-800 transition-colors duration-300"
+                                    >
+                                        <LinkedinIcon size={32} round />
+                                    </LinkedinShareButton>
+                                    <button
+                                        onClick={handleCopyUrl}
+                                        className="p-2 bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
+                                    >
+                                        <ClipboardIcon className="h-8 w-8 text-white" style={{ height: 20, width: 20 }} />
+                                    </button>
+
+
+                                </>
                             )}
                         </div>
                     </div>

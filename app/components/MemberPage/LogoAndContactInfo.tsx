@@ -1,28 +1,32 @@
-"use client";
+'use client';
 import React, { useEffect, useState } from 'react';
-import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon } from '@heroicons/react/solid';
-import {
-    WhatsappShareButton,
-    WhatsappIcon,
-    FacebookShareButton,
-    FacebookIcon,
-    LinkedinShareButton,
-    LinkedinIcon,
-    TwitterShareButton,
-    TwitterIcon,
-} from 'react-share';
-import { ClipboardIcon } from '@heroicons/react/outline';
+import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon, ClipboardIcon } from '@heroicons/react/solid';
+import { WhatsappShareButton, WhatsappIcon, FacebookShareButton, FacebookIcon, LinkedinShareButton, LinkedinIcon, TwitterShareButton } from 'react-share';
 
 interface LogoAndContactInfoProps {
     logo: string;
+    type: string;
     Firstname: string;
     Lastname: string;
     address: string;
     phone: string;
     email: string;
     website: string;
-    type: string;
+    Name: string;
 }
+
+const XIcon = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="white"
+        width="32"
+        height="32"
+        className="rounded-full bg-black p-1 hover:bg-gray-800 transition-colors duration-300"
+    >
+        <path d="M20.707 3.293a1 1 0 00-1.414 0L12 10.586 4.707 3.293a1 1 0 00-1.414 1.414L10.586 12l-7.293 7.293a1 1 0 101.414 1.414L12 13.414l7.293 7.293a1 1 0 001.414-1.414L13.414 12l7.293-7.293a1 1 0 000-1.414z" />
+    </svg>
+);
 
 const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
     logo,
@@ -33,18 +37,15 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
     email,
     website,
     type,
+    Name
 }) => {
     const [fullUrl, setFullUrl] = useState('');
 
     useEffect(() => {
-        const href = `/${type}/${Firstname.replace(/\s+/g, '-')}-${Lastname.replace(/\s+/g, '-')}`;
-        const setShareUrl = () => {
-            if (typeof window !== 'undefined') {
-                const baseUrl = window.location.origin;
-                setFullUrl(`${baseUrl}${href}`);
-            }
-        };
-        setShareUrl();
+        const formattedName = `${Firstname}-${Lastname}`;
+        const href = `/${type}/${encodeURIComponent(formattedName)}`;
+        const baseUrl = window.location.origin;
+        setFullUrl(`${baseUrl}${href}`);
     }, [Firstname, Lastname, type]);
 
     const handleCopyUrl = () => {
@@ -68,7 +69,7 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                 <div className="hidden lg:block border-r-2 border-black h-full mx-4 lg:mx-8"></div>
                 <div className="flex flex-col justify-start items-center lg:items-start w-full lg:w-2/3 text-gray-900 pl-0 lg:pl-4 lg:ml-4 md:ml-16">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-4 drop-shadow-lg text-center lg:text-left">
-                        {Firstname} {Lastname}
+                        {Name}
                     </h1>
                     <div className="flex flex-col items-start w-full">
                         <div className="flex items-center mb-2 justify-start w-full">
@@ -87,20 +88,20 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                                 <a href={`mailto:${email}`} className="text-blue-700 hover:text-yellow-400 transition-colors duration-300">{email}</a>
                             </p>
                         </div>
-                        <div className="flex items-center justify-start w-full mb-4">
+                        <div className="flex items-center justify-start w-full">
                             <GlobeAltIcon className="h-5 w-5 sm:h-6 sm:w-6 mr-1 drop-shadow-lg flex-shrink-0" />
                             <p className="text-base sm:text-lg md:text-xl break-all">
                                 <a href={website} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-yellow-400 transition-colors duration-300">{website}</a>
                             </p>
                         </div>
-                        {/* Share Profile Section */}
-                        <div className="flex items-center justify-start w-full mt-4 space-x-2">
-                            <p className="text-lg md:text-xl font-semibold mr-2">Share this profile</p>
+                        {/* Share Buttons */}
+                        <div className="flex items-center mt-4 space-x-2">
+                            <p className="text-base sm:text-lg md:text-xl font-semibold mr-2">Share this profile:</p>
                             {fullUrl && (
                                 <>
                                     <WhatsappShareButton
                                         url={fullUrl}
-                                        title={`Check out ${Firstname} ${Lastname}`}
+                                        title={`Check out ${Name}`}
                                         className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
                                     >
                                         <WhatsappIcon size={32} round />
@@ -111,31 +112,25 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                                     >
                                         <FacebookIcon size={32} round />
                                     </FacebookShareButton>
-
-                                    <TwitterShareButton
-                                        url={fullUrl}
-                                        title={`Check out ${Firstname} ${Lastname}`}
-                                        className="p-2 bg-blue-400 rounded-full hover:bg-blue-500 transition-colors duration-300"
-                                    >
-                                        <TwitterIcon size={32} round />
-                                    </TwitterShareButton>
                                     <LinkedinShareButton
                                         url={fullUrl}
-                                        title={`Check out ${Firstname} ${Lastname}`}
-                                        summary={`Visit the profile of ${Firstname} ${Lastname}`}
-                                        source={fullUrl}
-                                        className="p-2 bg-blue-700 rounded-full hover:bg-blue-800 transition-colors duration-300"
+                                        title={Name} // Force LinkedIn to use the member's name as the title
+                                        className="p-2 bg-blue-800 rounded-full hover:bg-blue-900 transition-colors duration-300"
                                     >
                                         <LinkedinIcon size={32} round />
                                     </LinkedinShareButton>
+                                    <TwitterShareButton
+                                        url={fullUrl}
+                                        className="p-2 bg-black rounded-full hover:bg-gray-800 transition-colors duration-300"
+                                    >
+                                        <XIcon />
+                                    </TwitterShareButton>
                                     <button
                                         onClick={handleCopyUrl}
                                         className="p-2 bg-gray-600 rounded-full hover:bg-gray-700 transition-colors duration-300"
                                     >
                                         <ClipboardIcon className="h-8 w-8 text-white" style={{ height: 20, width: 20 }} />
                                     </button>
-
-
                                 </>
                             )}
                         </div>

@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import { Members } from '../components/MemberInfo/Members';
 import MemberCard from '../components/MemberInfo/MemberCard';
 import categories from '../data/category'; // Assuming this is an array
+import { Typography } from '@mui/material'
 
 // Define the Member type
 interface Member {
@@ -53,6 +54,9 @@ const RealEstate: React.FC = () => {
   }, [categories]);
 
   return (
+    <Typography className='text-center mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black font-bold tracking-tight mb-4 sm:mb-6 md:mb-8' >
+      Lawyers and Paralegal
+
     <Grid container spacing={3} justifyContent="center" marginTop={9}>
       {shuffledMembers.map((member, index) => (
         <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
@@ -66,6 +70,7 @@ const RealEstate: React.FC = () => {
         </Grid>
       ))}
     </Grid>
+    </Typography>
   );
 };
 

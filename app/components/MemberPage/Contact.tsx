@@ -140,7 +140,7 @@ const Contact: React.FC<ContactProps> = ({ ccEmail, name }) => {
                                     onChange={onRecaptchaChange}
                                 />
                             </div>
-                            <div className="flex justify-end p-4">
+                            <div className="flex justify-start p-4">
                                 <Button variant="contained" size="large" color="primary" type="submit">
                                     Send Message
                                 </Button>

@@ -12,7 +12,6 @@ interface LogoAndContactInfoProps {
     phone: string;
     email: string;
     website: string;
-    Name: string;
 }
 
 const XIcon = () => (
@@ -37,7 +36,7 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
     email,
     website,
     type,
-    Name
+
 }) => {
     const [fullUrl, setFullUrl] = useState('');
 
@@ -69,7 +68,7 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                 <div className="hidden lg:block border-r-2 border-black h-full mx-4 lg:mx-8"></div>
                 <div className="flex flex-col justify-start items-center lg:items-start w-full lg:w-2/3 text-gray-900 pl-0 lg:pl-4 lg:ml-4 md:ml-16">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-4 drop-shadow-lg text-center lg:text-left">
-                        {Name}
+                        {Firstname} {Lastname}
                     </h1>
                     <div className="flex flex-col items-start w-full">
                         <div className="flex items-center mb-2 justify-start w-full">
@@ -101,7 +100,7 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                                 <>
                                     <WhatsappShareButton
                                         url={fullUrl}
-                                        title={`Check out ${Name}`}
+                                        title={`Check out ${Firstname} ${Lastname}`}
                                         className="p-2 bg-green-500 rounded-full hover:bg-green-600 transition-colors duration-300"
                                     >
                                         <WhatsappIcon size={32} round />
@@ -114,7 +113,7 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
                                     </FacebookShareButton>
                                     <LinkedinShareButton
                                         url={fullUrl}
-                                        title={Name} // Force LinkedIn to use the member's name as the title
+                                        title={Firstname} // Force LinkedIn to use the member's name as the title
                                         className="p-2 bg-blue-800 rounded-full hover:bg-blue-900 transition-colors duration-300"
                                     >
                                         <LinkedinIcon size={32} round />

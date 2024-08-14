@@ -56,7 +56,7 @@ const RealEstate: React.FC = () => {
   return (
     <Typography className='text-center mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black font-bold tracking-tight mb-4 sm:mb-6 md:mb-8' >
       Entreprenurs
-      <Grid container spacing={3} justifyContent="center" marginTop={9}>
+      <Grid container spacing={3} justifyContent="center" marginTop={2}>
         {shuffledMembers.map((member, index) => (
           <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
             <MemberCard

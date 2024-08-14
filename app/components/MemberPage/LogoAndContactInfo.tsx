@@ -1,5 +1,6 @@
-'use client';
+"use client"
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { PhoneIcon, MailIcon, LocationMarkerIcon, GlobeAltIcon, ClipboardIcon } from '@heroicons/react/solid';
 import { WhatsappShareButton, WhatsappIcon, FacebookShareButton, FacebookIcon, LinkedinShareButton, LinkedinIcon, TwitterShareButton } from 'react-share';
 
@@ -36,7 +37,6 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
     email,
     website,
     type,
-
 }) => {
     const [fullUrl, setFullUrl] = useState('');
 
@@ -54,6 +54,13 @@ const LogoAndContactInfo: React.FC<LogoAndContactInfoProps> = ({
 
     return (
         <div className="mt-2 p-4 sm:p-6 w-full max-w-10xl bg-gradient-to-r from-black via-gray-500 to-black mb-8 shadow-2xl flex justify-center relative overflow-hidden">
+            <Helmet>
+                <title>{`Profile of ${Firstname} ${Lastname}`}</title>
+                <meta property="og:title" content={`Profile of ${Firstname} ${Lastname}`} />
+                <meta property="og:description" content={`Contact and profile information for ${Firstname} ${Lastname}.`} />
+                <meta property="og:image" content={logo} />
+                <meta property="og:url" content={fullUrl} />
+            </Helmet>
             <div className="border-4 border-gray-300 bg-white shadow-lg p-4 flex flex-col lg:flex-row items-center lg:items-center w-full sm:w-4/5 md:w-3/5">
                 <div className="flex justify-center items-center w-full lg:w-2/5 mb-4 lg:mb-0">
                     <div className="rounded-lg overflow-hidden w-full max-w-[150px] sm:max-w-none sm:w-full aspect-square sm:aspect-auto">

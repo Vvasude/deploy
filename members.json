@@ -1,0 +1,603 @@
+[
+    {
+        "Firstname": "Aki",
+        "address": "1290 Finch Ave W, North York, ON M3J 2B1",
+        "type": "Beauty",
+        "phone": "",
+        "email": ""
+    },
+    {
+        "Firstname": "Aran",
+        "Lastname": "",
+        "address": "6A Bradwick Drive, Concord, Ontario L4K 2T3",
+        "type": "Entrepreneur",
+        "phone": "647-502-0195",
+        "email": "info@easilitygrp.ca"
+    },
+    {
+        "Firstname": "Ari",
+        "Lastname": "Ariaran",
+        "address": "1750 Brimley Road, Suite# 213 Scarborough, ON M1P 4X7",
+        "type": "Accountants",
+        "phone": "416-438-9799",
+        "email": "ari@aricpa.ca"
+    },
+    {
+        "Firstname": "Christeen",
+        "Lastname": "Seevaratnam",
+        "address": "8911 Woodbine Ave Markham, Ontario L3R 5G1",
+        "type": "FuneralServices",
+        "phone": "416-258-6759",
+        "email": "christeenseeva@yahoo.ca"
+    },
+    {
+        "Firstname": "Darshan",
+        "Lastname": "Sritharan",
+        "address": "107 - 1585 Markham Rd Toronto, ON M1B 2W1, Canada",
+        "type": "Finance",
+        "phone": "416-836-0345",
+        "email": "darshan@iconnectmortgages.ca"
+    },
+    {
+        "Firstname": "Dhurga",
+        "Lastname": "Arulendran",
+        "address": "5928 Finch Avenue East, Unit #220, Toronto, ON M1B 5P8",
+        "type": "RealEstate",
+        "phone": "416-802-9782",
+        "email": "dhurkarealtor@gmail.com"
+    },
+    {
+        "Firstname": "Dilani",
+        "Lastname": "Gunarajah",
+        "address": "2401 Eglinton Ave E #210, Scarborough, ON M1K 2N8",
+        "type": "Lawyers",
+        "phone": "416-755-7777",
+        "email": "dilani@dilanilaw.com"
+    },
+    {
+        "Firstname": "Dunstan",
+        "Lastname": "Peter",
+        "address": "4 Finley Road, Brampton, ON L6T 1A9",
+        "type": "Entrepreneur",
+        "phone": "416-916-4666",
+        "email": "dunstan.peter@trinitytechinc.ca"
+    },
+    {
+        "Firstname": "Esa",
+        "Lastname": "Para",
+        "address": "23 Westmore Dr., Suite #102 Toronto, ON M97 3Y7",
+        "type": "RealEstate",
+        "phone": "416-833-5887",
+        "email": "esa.esananda@sympatico.ca"
+    },
+    {
+        "Firstname": "Gajen",
+        "Lastname": "Mahakanapthy",
+        "address": "404-300 Rossland Rd E, Ajax, ON L1Z 0K4",
+        "type": "RealEstate",
+        "phone": "416-999-2777",
+        "email": "smgajan@gmail.com"
+    },
+    {
+        "Firstname": "Gajen",
+        "Lastname": "Arumugam",
+        "address": "31 Racine Rd, Etobicoke, ON M9W 2Z4",
+        "phone": "416-745-4100",
+        "type": "Entrepreneur",
+        "email": "gajena@lucvaa.com"
+    },
+    {
+        "Firstname": "Ganesh",
+        "Lastname": "Balakanthan",
+        "address": "80 Corporate Dr Suite #207, Scarborough, ON M1H 3G5",
+        "type": "Lawyers",
+        "phone": "416-296-9999",
+        "email": ""
+    },
+    {
+        "Firstname": "Gobiraj",
+        "Lastname": "Anushan",
+        "address": "795 Milner Avenue Toronto, Ontario M1B 3C3",
+        "type": "RealEstate",
+        "phone": "416-219-3333",
+        "email": "gobi@teamsmart.ca"
+    },
+    {
+        "Firstname": "Kajathas",
+        "Lastname": "Kaneshalingam",
+        "address": "705 Progress Ave #39, Scarborough, ON M1H 2X1",
+        "type": "Entrepreneur",
+        "phone": "647-262-2575",
+        "email": "info@monakko.ca"
+    },
+    {
+        "Firstname": "Kamalanathan",
+        "Lastname": "Packiyanathan",
+        "address": "1031 Meyerside Drive Unit #14",
+        "type": "CleaningServices",
+        "phone": "647-985-1251",
+        "email": "info@sqmjanitorial.com"
+    },
+    {
+        "Firstname": "Kanchana",
+        "Lastname": "Thuraisingham",
+        "address": "",
+        "type": "Entrepreneur",
+        "phone": "416-574-4533",
+        "email": "kanchicreations4u@gmail.com"
+    },
+    {
+        "Firstname": "Kanish",
+        "Lastname": "&Partners",
+        "address": "West Tower, 130 Queens Quay E #1008, Toronto, ON M5A 0P6",
+        "type": "Accountants",
+        "phone": "416-975-9292",
+        "email": "kanish@kanish-partners.com"
+    },
+    {
+        "Firstname": "Karan",
+        "Lastname": "Kanagasabai",
+        "address": "1265 Morningside Ave #203, Scarborough, ON M1B 3V9",
+        "type": "RealEstate",
+        "phone": "416-271-8572",
+        "email": ""
+    },
+    {
+        "Firstname": "Kavitha",
+        "Lastname": "Siva",
+        "address": "10 Milner Business Ct Unit 801, Scarborough, ON M1B 3C6",
+        "type": "HealthCare",
+        "phone": "416-291-9076",
+        "email": "kavithashank@gmail.com"
+    },
+    {
+        "Firstname": "Ken",
+        "Lastname": "Kirupa",
+        "address": "203-1265 Morningside Ave, Toronto, ON",
+        "type": "RealEstate",
+        "phone": "416-830-8191",
+        "email": "kenkirupa@gmail.com"
+    },
+    {
+        "Firstname": "Kris",
+        "Lastname": "Sivaguru",
+        "address": "2050 Ellesmere Rd #3, Scarborough, ON M1H 3A9",
+        "type": "CleaningServices",
+        "phone": "416-286-6375",
+        "email": "info@shinol.ca"
+    },
+    {
+        "Firstname": "Krishna",
+        "Lastname": "Ratnasabapathy",
+        "address": "3301 McNicoll Ave #10, Scarborough, ON M1V 3Z6",
+        "type": "Entrepreneur",
+        "phone": "647-606-6393",
+        "email": "kratnas@gmail.com"
+    },
+    {
+        "Firstname": "Kubes",
+        "Lastname": "Navaratnam",
+        "address": "10 Milner Business Court, Suite# 210 Toronto, ON M1B 3C6",
+        "type": "Lawyers",
+        "phone": "416-321-1100",
+        "email": "info@navawilson.law"
+    },
+    {
+        "Firstname": "Lingam",
+        "Lastname": "Kularatnam",
+        "address": "10 Milner Business Ct, Scarborough, ON M1B 3C6",
+        "type": "Entrepreneur",
+        "phone": "416-502-9800",
+        "email": "info@capitalink.ca"
+    },
+    {
+        "Firstname": "Mahen",
+        "Lastname": "Singarajah",
+        "address": "203-1265 Morningside Ave, Toronto, ON",
+        "type": "RealEstate",
+        "phone": "416-302-7283",
+        "email": "realtormahen@gmail.com"
+    },
+    {
+        "Firstname": "Matt and",
+        "Lastname": "Abiramy",
+        "address": "7 Eastvale Dr #205, Markham, ON L3S 4N8",
+        "type": "RealEstate",
+        "phone": "647-268-9219",
+        "email": "mttmathisayan@gmail.com"
+    },
+    {
+        "Firstname": "Mayuran",
+        "Lastname": "Tharmabalan",
+        "address": "1585 Markham Road, Scarborough, ON M1B 2W1, Canada",
+        "type": "Accountants",
+        "phone": "647-748-6344",
+        "email": "mayu@tharmabalan.ca"
+    },
+    {
+        "Firstname": "Mohan",
+        "Lastname": "Sundaramohan",
+        "address": "",
+        "type": "Finance",
+        "phone": "416-497-7762",
+        "email": "mohan.sundaramohan@rbc.com"
+    },
+    {
+        "Firstname": "Muki",
+        "Lastname": "Rajadurai",
+        "address": "1294 Kingston Rd, Pickering, ON L1V 1B7",
+        "type": "Restaurants",
+        "phone": "416-623-4903",
+        "email": "info@altonagroup"
+    },
+    {
+        "Firstname": "Murali",
+        "Lastname": "Sivaguru",
+        "address": "80 Travail Rd Unit 1 & 2",
+        "type": "Entrepreneur",
+        "phone": "416-271-2579",
+        "email": "msivaguru7@gmail.com"
+    },
+    {
+        "Firstname": "Muraly",
+        "Lastname": "Srinarayanathas",
+        "address": "100 Westney Rd S, Ajax, ON L1S 7H3",
+        "type": "Education",
+        "phone": "416-321-9911",
+        "email": "muraly@muralys.com"
+    },
+    {
+        "Firstname": "Mylashan",
+        "Lastname": "Mylvaganam",
+        "address": "10 Milner Business Ct #300, Toronto, ON M1B 3C6",
+        "type": "HealthCare",
+        "phone": "1-888-508-8281",
+        "email": "info@premierhealthcanada.ca"
+    },
+    {
+        "Firstname": "Nimal",
+        "Lastname": "Vinayagamoorthy",
+        "address": "2525 Pharmacy Ave, Scarborough, ON M1W 2K2",
+        "type": "Accountants",
+        "phone": "416-930-9898",
+        "email": "nimal@nlraccounting.com"
+    },
+    {
+        "Firstname": "Niruban",
+        "Lastname": "Anandan",
+        "address": "396 Jaybell Grove, Toronto, ON M1C 2X5",
+        "type": "Entrepreneur",
+        "phone": "647-615-1733",
+        "email": "Nanandan@securelitesolution.ca"
+    },
+    {
+        "Firstname": "Patricia",
+        "Lastname": "Peter",
+        "address": "121 City View Dr, Etobicoke, ON M9W 5A8",
+        "type": "FuneralServices",
+        "phone": "416-834-5753",
+        "email": "advisorpat10@gmail.com"
+    },
+    {
+        "Firstname": "Poorany",
+        "Lastname": "Sornabala",
+        "address": "191 The West Mall, Suite 1100 Toronto, ON M9C 5K8",
+        "type": "Lawyers",
+        "phone": "647-968-7059",
+        "email": "psornabala@gmail.com"
+    },
+    {
+        "Firstname": "Pradeepraj",
+        "Lastname": "Mani",
+        "address": "3A-2761 Markham Road",
+        "type": "Finance",
+        "phone": "416-997-3862",
+        "email": "prmani@mortgagealliance.com"
+    },
+    {
+        "Firstname": "Prisha",
+        "Lastname": "Paramsothy",
+        "address": "8130 Sheppard Avenue East Scarborough, ON M1B 3W3",
+        "type": "Lawyers",
+        "phone": "647-478-0144",
+        "email": "prishanty@prishalaw.ca"
+    },
+    {
+        "Firstname": "Rahulan",
+        "Lastname": "Sana",
+        "address": "",
+        "type": "Impex",
+        "phone": "416-454-3423",
+        "email": "rahulansana@yahoo.com"
+    },
+    {
+        "Firstname": "Raj",
+        "Lastname": "Subrayam",
+        "address": "80 Corporate Drive Suite #307 Toronto, Ontario M1H 3G5",
+        "type": "Finance",
+        "phone": "416-298-1700",
+        "email": "raj@smi4loan.com"
+    },
+    {
+        "Firstname": "Raj",
+        "Lastname": "Rajasri",
+        "address": "1315 Lawrence Ave E Suite 401",
+        "type": "Accountants",
+        "phone": "416-750-7577",
+        "email": "info@thelifecfo.com"
+    },
+    {
+        "Firstname": "Rajan",
+        "Lastname": "Rajendra",
+        "address": "2300 Lawrence Ave E, Scarborough, ON M1P 2R2",
+        "type": "EventManagement",
+        "phone": "416-828-7255",
+        "email": "rajah@whiteshieldbanquet.com"
+    },
+    {
+        "Firstname": "Rajeef",
+        "Lastname": "Koneswaran",
+        "address": "1265 Morningside Ave Suite #203, Scarborough, ON M1B 3V9",
+        "type": "RealEstate",
+        "phone": "416-568-1078",
+        "email": "rajeefgta@gmail.com"
+    },
+    {
+        "Firstname": "Rajeev",
+        "Lastname": "Muthuraman",
+        "address": "2708 Coventry Road, Oakville, ON L6H 6R1",
+        "type": "Entrepreneur",
+        "phone": "905-829-0000",
+        "email": "rajee@rjmultilitho.com"
+    },
+    {
+        "Firstname": "Rakhavan",
+        "Lastname": "Ketheeswaran",
+        "address": "",
+        "type": "Entrepreneur",
+        "phone": "416-833-1450",
+        "email": "rakhavan07@gmail.com"
+    },
+    {
+        "Firstname": "Rathi",
+        "Lastname": "Paramasamy",
+        "address": "9 - 5310 Finch Ave. East Toronto, On M1S 5E8",
+        "type": "Education",
+        "phone": "416-412-7374",
+        "email": "info@nacptpharmacollege.com"
+    },
+    {
+        "Firstname": "Ravi",
+        "Lastname": "Paramanathan",
+        "address": "3341 Markham Road. Unit #127B Scarborough ON M1X OA5",
+        "type": "Finance",
+        "phone": "416-528-6279",
+        "email": "raviparam09@yahoo.ca"
+    },
+    {
+        "Firstname": "Rukshan",
+        "Lastname": "Para",
+        "address": "",
+        "type": "Finance",
+        "phone": "647-273-8096",
+        "email": "rukshan.para@3c3consulting.com"
+    },
+    {
+        "Firstname": "Santha",
+        "Lastname": "Panchalingam",
+        "address": "",
+        "type": "Entrepreneur",
+        "phone": "416-200-5470",
+        "email": "info@santha.ca"
+    },
+    {
+        "Firstname": "Sasi",
+        "Lastname": "Naren",
+        "address": "2900, Markham Road Unit - A14 Scarborough - ON M1X 1E6",
+        "type": "Beauty",
+        "phone": "416-677-5511",
+        "email": "kal_025@hotmail.com"
+    },
+    {
+        "Firstname": "Sathiyapriya",
+        "Lastname": "Kalaimathian",
+        "address": "3850 Sheppard Avenue East , Unit 206, Toronto, Ontario, M1T 3L4",
+        "type": "Lawyers",
+        "phone": "647-283-5834",
+        "email": "info@sathiyalegalservices.com"
+    },
+    {
+        "Firstname": "Selva",
+        "Lastname": "Selvakumar",
+        "address": "255 Duncan Mill Rd #211, North York, ON M3B 3H9",
+        "type": "Lawyers",
+        "phone": "416-909-5533",
+        "email": "selva@kadishlaw.ca"
+    },
+    {
+        "Firstname": "Senthooran",
+        "Lastname": "Punithavel",
+        "address": "10 Milner Business Ct, Scarborough, ON M1B 3C6",
+        "type": "Finance",
+        "phone": "416-396-0707",
+        "email": ""
+    },
+    {
+        "Firstname": "Senthuran",
+        "Lastname": "Nadarajah",
+        "address": "",
+        "type": "EventManagement",
+        "phone": "416-832-7306",
+        "email": "senthuran@tamilstar.com"
+    },
+    {
+        "Firstname": "Sey",
+        "Lastname": "Poonudurai",
+        "address": "100 Achilles Rd, Ajax, ON L1Z 0C5",
+        "type": "AutoServices",
+        "phone": "416-902-2939",
+        "email": ""
+    },
+    {
+        "Firstname": "Shankar",
+        "Lastname": "Nallathamby",
+        "address": "236 Boot Hill Rd, Woodstock, ON N4S 2N4",
+        "type": "Entrepreneur",
+        "phone": "416-270-4343",
+        "email": "shankar@vhgcanada.com"
+    },
+    {
+        "Firstname": "Shehan",
+        "Lastname": "DeSilva",
+        "address": "839 Runnymede Rd Toronto, Canada",
+        "type": "EventManagement",
+        "phone": "416-271-5980",
+        "email": "shop@craft360.ca"
+    },
+    {
+        "Firstname": "Sinnadurai",
+        "Lastname": "Jeyakumar",
+        "address": "",
+        "type": "Engineering",
+        "phone": "416-816-4970",
+        "email": "sjkumar19@gmail.com"
+    },
+    {
+        "Firstname": "Siva and",
+        "Lastname": "Joy",
+        "address": "205 - 7 Eastvale Drive, Markham, Ontario, L3S 4N8",
+        "type": "RealEstate",
+        "phone": "416-545-7482",
+        "email": ""
+    },
+    {
+        "Firstname": "Darshan",
+        "Lastname": "Vallipuranathar",
+        "address": "80 Corporate Drive, Suite #309 Scarborough, ON M1H 3G5",
+        "type": "Lawyers",
+        "phone": "416-439-0224",
+        "email": "sri@creditsolution@gmail.com"
+    },
+    {
+        "Firstname": "Stan",
+        "Lastname": "Muthulingam",
+        "address": "1410 Birchmount Road Toronto, Ontario M1P 2E3 Canada",
+        "type": "Entrepreneur",
+        "phone": "416-293-3624",
+        "email": "sales@thecsi.com"
+    },
+    {
+        "Firstname": "Sritharan",
+        "Lastname": "Thavarajah",
+        "address": "1 Eglinton Square, Scarborough, ON M1L 2K1",
+        "type": "Restaurants",
+        "phone": "416-755-0523",
+        "email": "eatatwatts@gmail.com"
+    },
+    {
+        "Firstname": "Sritharan",
+        "Lastname": "Thurairajah",
+        "address": "10 Milner Business Ct Suite 204, Scarborough, ON M1B 3C6",
+        "type": "Finance",
+        "phone": "416-918-9771",
+        "email": "sri@life100.ca"
+    },
+    {
+        "Firstname": "Suresh",
+        "Lastname": "Tharmalingam",
+        "address": "",
+        "type": "Financer",
+        "phone": "416-801-3863",
+        "email": "suresh_tharmalingam@yahoo.ca"
+    },
+    {
+        "Firstname": "Tension",
+        "Lastname": "Joseph",
+        "address": "415 Hood Rd #22, Markham, ON L3R 3W2",
+        "type": "EventManagement",
+        "phone": "905-475-5870",
+        "email": "info@jandjswagat.com"
+    },
+    {
+        "Firstname": "Tham",
+        "Lastname": "Shanmugarajah",
+        "address": "8888 Keele St Unit #7, Concord, ON L4K 2N2",
+        "type": "Engineering",
+        "phone": "416-526-8426",
+        "email": "tham@thamsurvey.ca"
+    },
+    {
+        "Firstname": "Thana",
+        "Lastname": "Yoganathan",
+        "address": "7240 WOODBINE AVE UNIT 10 MARKHAM, Ontario L3R1A4",
+        "type": "Entrepreneur",
+        "phone": "416-418-5749",
+        "email": "thanaever@gmail.com"
+    },
+    {
+        "Firstname": "Tishain",
+        "Lastname": "Selvarajah",
+        "address": "2146a Queen St E, Toronto, ON M4E 1E3",
+        "type": "Entrepreneur",
+        "phone": "416-602-0600",
+        "email": "copy@mailslot.ca"
+    },
+    {
+        "Firstname": "Varunan",
+        "Lastname": "Asokan",
+        "address": "703-100 Allstate parkway, Markham, ON L3R 6H3",
+        "type": "Finance",
+        "phone": "416-843-8762",
+        "email": "varunan.asokan@gmail.com"
+    },
+    {
+        "Firstname": "Venu",
+        "Lastname": "Puvirasan",
+        "address": "50 Nashdene Rd Unit 103, Scarborough, ON M1V 5J2",
+        "type": "Entrepreneur",
+        "phone": "416-297-0707",
+        "email": "info@apexcreations.ca"
+    },
+    {
+        "Firstname": "Vijaykulan",
+        "Lastname": "Viyayaratnam",
+        "address": "140 Finchdene Sq., Unit 8 Toronto, ON M1X 1B1 Canada",
+        "type": "Entrepreneur",
+        "phone": "416-335-3232",
+        "email": "info@mvnnetworks.com"
+    },
+    {
+        "Firstname": "Vijay",
+        "Lastname": "Koneswaran",
+        "address": "1300 Ellesmere Rd, Scarborough, ON M1P 2X9",
+        "type": "Entrepreneur",
+        "phone": "1-800-445-1538",
+        "email": "info@sandb.ca"
+    },
+    {
+        "Firstname": "Vina",
+        "Lastname": "Devadas",
+        "address": "1415 Kennedy Rd Unit 3, Scarborough, ON M1P 2L6",
+        "type": "Lawyers",
+        "phone": "416-266-1234",
+        "email": "devadas@vdlaw.ca"
+    },
+    {
+        "Name": "",
+        "Firstname": "Vinosha",
+        "Lastname": "Thevarajah",
+        "address": "3 Centre St Suite 208, Markham, ON L3P 3P9",
+        "type": "Lawyers",
+        "phone": "647-308-0517",
+        "email": "info@thevalaw.com"
+    },
+    {
+        "Firstname": "Vithu",
+        "Lastname": "Ramachandran",
+        "address": "300 Rossland Rd E Unit- 403, Ajax, ON L1Z 0M4",
+        "type": "Lawyers",
+        "phone": "416-902-8225",
+        "email": "vithu9@gmail.com",
+        "website": "https://ramachandran.law/"
+    }
+]

@@ -165,7 +165,7 @@ export const Members: Member[] = [
         type: "RealEstate",
         phone: "416-833-5887",
         email: "esa.esananda@sympatico.ca",
-        website: "https://www.homelifesuperstars.com/",
+        website: "https://www.esapara.com",
         iframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.470869011593!2d-79.60563682393813!3d43.74231784666254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3afdb0ef605d%3A0x9a478dd5607d0c74!2s23%20Westmore%20Dr%2C%20Etobicoke%2C%20ON%20M9W%200C3!5e0!3m2!1sen!2sca!4v1721660100532!5m2!1sen!2sca",
         aboutus: "At HomeLife Superstars Real Estate Ltd., Brokerage* we uphold an ongoing commitment to providing an elevated level of personal service. Our clients come first, and as a result, they are able to achieve more than they ever dreamed with their real estate investment. Because we expect more from our associates, you can expect more from us when it comes to the important sale or purchase of your property.When it comes to your next move, we want you to experience the difference exceptional real estate service can make.Contact us today, for free real estate advice, to find your nearest sales associate or to find your dream home!",
         sectionItem1: "Property Listing",

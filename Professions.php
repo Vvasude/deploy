@@ -1,7 +1,7 @@
 <?php
 // Read the CSV file
-$filename = 'Data.csv';
-$file = fopen($filename, 'r');
+$filename = 'CTCC2.csv';  // Specify the file name
+$file = fopen($filename, 'r');  // Open the file for reading
 
 // Get the headers
 $headers = fgetcsv($file);
@@ -84,6 +84,7 @@ ksort($industryData);
             width: 100%;
             border-collapse: collapse;
             margin: 0;
+            overflow-x: auto;
         }
 
         th,
@@ -103,6 +104,31 @@ ksort($industryData);
 
         tr:hover {
             background-color: #e2e2e2;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .industry-header {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            th,
+            td {
+                white-space: nowrap;
+            }
         }
     </style>
 </head>
